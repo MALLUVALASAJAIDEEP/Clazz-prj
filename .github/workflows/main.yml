@@ -23,7 +23,9 @@ jobs:
           pip install ruff pyright
 
       - name: Run Tests
-        run: pytest
+        run: |
+          export PYTHONPATH=.
+          pytest
 
       - name: Run Lint Check
         run: ruff check .
